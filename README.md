@@ -1,1 +1,1 @@
-## A simple interface to GPIO devices with Raspberry Pi (samples)
+# GPIO on a Raspberry Pi with Kotlin/Native (samples)

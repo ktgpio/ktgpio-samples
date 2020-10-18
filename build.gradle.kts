@@ -20,6 +20,8 @@
  * SOFTWARE.
  */
 
+apply("gradle/native-libs.gradle.kts")
+
 plugins {
   kotlin("multiplatform") version "1.4.10"
   id("org.jmailen.kotlinter") version "3.2.0"
@@ -29,20 +31,6 @@ repositories {
   maven("https://dl.bintray.com/ktgpio/ktgpio/")
   mavenCentral()
 }
-
-val nativeLibs = configurations.create("nativeLibs") {
-  isTransitive = false
-}
-
-dependencies {
-  nativeLibs("io.ktgp:native-libs:${project.findProperty("ktgpio.version")}")
-}
-
-val unzip = tasks.register<Copy>("unzip") {
-  from(zipTree(nativeLibs.singleFile))
-  into("lib")
-}
-
 
 kotlin {
 //  val native = linuxArm64("native")
@@ -62,9 +50,15 @@ kotlin {
   }
 
   configure(listOf(native)) {
+    val libs = when (konanTarget.name) {
+      "linux_arm32_hfp" -> "$buildDir/native/libs/usr/lib/arm-linux-gnueabihf/"
+      "linux_arm64" -> "$buildDir/native/libs/usr/lib/aarch64-linux-gnu/"
+      else -> error("No libraries for this target (${konanTarget.name})")
+    }
     binaries.executable()
     binaries.all {
-      linkTask.dependsOn(unzip)
+      linkTask.dependsOn(tasks.getByPath(":nativeLibs"))
+      linkerOpts.add("-L$libs")
     }
   }
 }

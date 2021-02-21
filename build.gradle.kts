@@ -1,5 +1,5 @@
 /*
- * Copyright © 2020 Pavel Kakolin
+ * Copyright © 2021 Pavel Kakolin
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +23,8 @@
 apply("gradle/native-libs.gradle.kts")
 
 plugins {
-  kotlin("multiplatform") version "1.4.10"
-  id("org.jmailen.kotlinter") version "3.2.0"
+  kotlin("multiplatform") version "1.4.30"
+  id("org.jmailen.kotlinter") version "3.3.0"
 }
 
 repositories {

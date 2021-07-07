@@ -23,8 +23,8 @@
 apply("gradle/native-libs.gradle.kts")
 
 plugins {
-  kotlin("multiplatform") version "1.4.30"
-  id("org.jmailen.kotlinter") version "3.3.0"
+  kotlin("multiplatform") version "1.5.20"
+  id("org.jmailen.kotlinter") version "3.4.5"
 }
 
 repositories {

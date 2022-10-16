@@ -23,8 +23,8 @@
 apply("gradle/native-libs.gradle.kts")
 
 plugins {
-  kotlin("multiplatform") version "1.5.30"
-  id("org.jmailen.kotlinter") version "3.5.1"
+  kotlin("multiplatform") version "1.7.20"
+  id("org.jmailen.kotlinter") version "3.12.0"
 }
 
 repositories {
@@ -32,8 +32,8 @@ repositories {
 }
 
 kotlin {
-//  val native = linuxArm64("native")
-  val native = linuxArm32Hfp("native")
+  val native = linuxArm64("native")
+//  val native = linuxArm32Hfp("native")
 
   sourceSets.all {
     languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")

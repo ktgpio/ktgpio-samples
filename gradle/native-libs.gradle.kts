@@ -21,14 +21,14 @@
  */
 
 val nativeLibs = listOf(
-  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod2_1.2-3_armhf.deb",
-  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod2_1.2-3_arm64.deb",
-  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod-dev_1.2-3_armhf.deb",
-  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod-dev_1.2-3_arm64.deb",
-  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c-dev_4.1-1_armhf.deb",
-  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c-dev_4.1-1_arm64.deb",
-  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c0_4.1-1_armhf.deb",
-  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c0_4.1-1_arm64.deb"
+  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod2_1.6.2-1_armhf.deb",
+  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod2_1.6.2-1_arm64.deb",
+  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod-dev_1.6.2-1_armhf.deb",
+  "http://ftp.debian.org/debian/pool/main/libg/libgpiod/libgpiod-dev_1.6.2-1_arm64.deb",
+  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c-dev_4.2-1+b1_armhf.deb",
+  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c-dev_4.2-1+b1_arm64.deb",
+  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c0_4.2-1+b1_armhf.deb",
+  "http://ftp.debian.org/debian/pool/main/i/i2c-tools/libi2c0_4.2-1+b1_arm64.deb"
 )
 
 val subtasks = nativeLibs.mapIndexed { index, url ->
